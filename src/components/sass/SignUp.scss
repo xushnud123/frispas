@@ -1,0 +1,258 @@
+@import './bootstrap';
+
+.signUp{
+    padding: 25px 140px;
+    background: linear-gradient(to left, #E115AA, #8E44AD);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+        @include font(500,30px,38px);
+        color: $qora;
+    }
+    .signCard{
+        width: 100%;
+        min-height: 60%;
+        background: rgba(255,255,255,0.2);
+        border: 1px solid rgba(255,255,255,0.3);
+        border-radius: 20px;
+        padding: 50px;
+        text-align: center;
+        img{
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .signHeader{
+            margin-top: 30px;
+            display: grid;
+            grid-gap: 80px;
+            grid-template-columns: repeat(2,1fr);
+            .form{
+                label{
+                    @include font(500,20px,26px);
+                    color: $qora;
+                    display: block;
+                    margin-bottom: 15px;
+                }
+                input{
+                    display: block;
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 25px;
+                    border: 1px solid rgba(255,255,255,0.3);
+                    background: rgba(255,255,255,0.2);
+                    outline: none;
+                    text-align: center;
+                    padding: 0 10px;
+                    box-sizing: border-box;
+                    @include font(500,21px,30px);
+                    color: $qora;
+                    letter-spacing: 1.2px;
+                }
+                select{
+                    display: block;
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 25px;
+                    border: 1px solid rgba(255,255,255,0.3);
+                    padding: 0 10px;
+                    background: $option;
+                    outline: none;
+                    @include font(500,21px,30px);
+                    color: $qora;
+                    letter-spacing: 1.2px;
+                    option {
+                        background-color: rgba(243, 92, 205, 0.48);
+                        height: 40px;
+                    }
+                }
+                .react-datepicker-wrapper{
+                    width: 100%;
+                }
+            }
+        }
+        .signFooter{
+            margin-top: 45px;
+            ul{
+                display: grid;
+                grid-gap: 80px;
+                grid-template-columns: repeat(2,1fr);
+                li{
+                    justify-self: center;
+                    width: 50%;
+                    height: 50px;
+                    border-radius: 30px;
+                    // border: 1px solid rgba(255,255,255,0.3);
+                    box-sizing: border-box;
+                    list-style: none;
+                    background: linear-gradient(90deg, #0162c8, #55e7fc);
+                    transition: all linear 0.1s;
+                    position: relative;
+                    overflow: hidden;
+                    a{
+                        @include display(center);
+                        height: 100%;
+                        text-decoration: none;
+                        @include font(500,22px,22px);
+                        color: $qora;
+                        letter-spacing: 1.2px;
+                    }
+                    span{
+                        position: absolute;
+                        background: $oq;
+                        transform: translate(-50%, -50%);
+                        pointer-events: none;
+                        border-radius: 50%;
+                        left: 0 !important;
+                        top: 0 !important;
+                        animation: animate 1s linear infinite;
+                    }
+                    @keyframes animate {
+                        0%{
+                            width: 0px;
+                            height: 0px;
+                            opacity: 0.3;
+                        }
+                        100%{
+                            width: 500px;
+                            height: 500px;
+                            opacity: 0;
+                        }
+                    }
+                    &:nth-child(2){
+                        background: linear-gradient(90deg, #755bea, #E115AA);
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:1200px) and (min-width:960px) {
+    .signUp{
+        padding: 25px 100px;
+        .signCard{
+            width: 100%;
+            .signHeader{
+                grid-gap: 50px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:960px) and (min-width:700px) {
+    .signUp{
+        padding: 25px 30px;
+        .signCard{
+            width: 100%;
+            .signHeader{
+                grid-gap: 40px;
+                .form{
+                    label{
+                        @include font(500,18px,26px);
+                    }
+                    input{
+                        @include font(500,20px,30px);
+                    }
+                    select{
+                        @include font(500,18px,30px);
+                    }
+                }
+            }
+            .signFooter{
+                ul{
+                    li{
+                        width: 70%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:700px) and (min-width:500px){
+    .signUp{
+        padding: 25px 30px;
+        .signCard{
+            width: 100%;
+            padding: 30px;
+            .signHeader{
+                grid-gap: 40px;
+                grid-template-columns: repeat(1,1fr);
+                .form{
+                    label{
+                        @include font(500,18px,26px);
+                    }
+                    input{
+                        @include font(500,20px,30px);
+                    }
+                    select{
+                        @include font(500,18px,30px);
+                    }
+                }
+            }
+            .signFooter{
+                ul{
+                    grid-template-columns: repeat(1,1fr);
+                    grid-gap: 40px;
+                    li{
+                        width: 70%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px){
+    .signUp{
+        padding: 25px 30px;
+        .signCard{
+            width: 100%;
+            padding: 30px;
+            .signHeader{
+                grid-gap: 30px;
+                grid-template-columns: repeat(1,1fr);
+                .form{
+                    label{
+                        @include font(500,17px,24px);
+                    }
+                    input{
+                        @include font(500,18px,26px);
+                    }
+                    select{
+                        @include font(500,17px,26px);
+                    }
+                }
+            }
+            .signFooter{
+                ul{
+                    grid-template-columns: repeat(1,1fr);
+                    grid-gap: 30px;
+                    li{
+                        width: 70%;
+                        a{
+                            @include font(500,20px,20px);
+                            @keyframes animate {
+                                0%{
+                                    width: 0px;
+                                    height: 0px;
+                                    opacity: 0.3;
+                                }
+                                100%{
+                                    width: 300px;
+                                    height: 300px;
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

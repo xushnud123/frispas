@@ -1,0 +1,336 @@
+@import './bootstrap';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.Container{
+    padding:0 140px;
+    height: 80px;
+    top: 0;
+    position: sticky;
+    background: $oq;
+    transition: 0s all linear;
+    nav{
+        @include display(space-between);
+        height: 80px;   
+        top: 0;
+        .Fris{
+            text-decoration: none;
+            @include font(bold,24px,32px);
+            color:$blue;
+        }
+        .zipOne{
+            display: none;
+        }
+        .zip{
+            @include display(space-between);
+            width: 82%;
+            ul{
+                display: flex;
+                align-items: center;
+                li{
+                    a{
+                        text-decoration: none;
+                    }
+                }
+                &:nth-child(1){
+                    li{
+                        list-style: none;
+                        padding: 6px 0;
+                        a{
+                            @include font(bold,16px,28px);
+                            color:$qora;
+                            padding: 4px 0;
+                            transition: 0.5s;
+                            position: relative;
+                            &::after {
+                                position: absolute;
+                                content: "";
+                                top: 100%;
+                                left: 0;
+                                width: 100%;
+                                height: 3px;
+                                // background: #3498db;
+                                background:linear-gradient(to right,#BC4BF5,#4BF5EA ,#3E60F7 );
+                                transform: scaleX(0);
+                                transform-origin: right;
+                                transition: transform 0.5s;
+                            }
+                        
+                            &:hover {
+                                color: #95a5a6;
+                            }
+                        
+                            &:hover::after {
+                                transform: scaleX(1);
+                                transform-origin: left;
+                            }
+                            &:active{
+                                transform: scaleX(1);
+                                transform-origin: left;
+                                color: #95a5a6;
+                            }
+                        }
+                        a.active{
+                            transform: scaleX(1);
+                            transform-origin: left;
+                            color: #95a5a6;
+                            &::after{
+                                //background: #3498db;
+                                background:linear-gradient(to right,#BC4BF5,#4BF5EA ,#3E60F7 );
+                                transform: scaleX(1);
+                            }
+                        }
+                        &:not(:nth-child(1)){
+                            margin-left: 40px;
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    li{
+                        list-style: none;
+                        &:nth-child(1){
+                            // margin-left: 140px;
+                            padding: 6px 0;
+                            a{
+                                @include font(bold,16px,19px);
+                                color:$qora;
+                                padding: 4px 0;
+                                transition: 0.5s;
+                                position: relative;
+                                &::after {
+                                    position: absolute;
+                                    content: "";
+                                    top: 100%;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 3px;
+                                    background:linear-gradient(to right,#BC4BF5,#4BF5EA ,#3E60F7 );
+                                    transform: scaleX(0);
+                                    transform-origin: right;
+                                    transition: transform 0.5s;
+                                }
+                            
+                                &:hover {
+                                    color: #95a5a6;
+                                }
+                            
+                                &:hover::after {
+                                    transform: scaleX(1);
+                                    transform-origin: left;
+                                }
+                            }
+                            a.active{
+                                transform: scaleX(1);
+                                transform-origin: left;
+                                color: #95a5a6;
+                                &::after{
+                                    background:linear-gradient(to right,#BC4BF5,#4BF5EA ,#3E60F7 );
+                                    transform: scaleX(1);
+                                }
+                            }
+                        }
+                        &:nth-child(2){
+                            margin-left: 40px;
+                            a{
+                                @include font(bold,16px,19px);
+                                color:$sabzirang;
+                                background-color: $oq;
+                                padding: 12px 24px;
+                                border-radius: 15px;
+                                transition: 0.4s all linear ;
+                                border: 1px solid $sabzirang;
+                                &:hover{
+                                    color:$oq;
+                                    background-color: $sabzirang;
+                                    box-shadow: 0px 4px 16px rgba(255, 87, 34, 0.32);
+                                }
+                            }
+                            a.active{
+                                    color:$oq;
+                                    background-color: $sabzirang;
+                                    box-shadow: 0px 4px 16px rgba(255, 87, 34, 0.32);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .nav-icon{
+            display: none;
+        }
+
+    }
+}
+
+
+.Container.effect{
+    box-shadow: 2px 2px 10px red;
+    background:linear-gradient(to  left,#E115AA,#8E44AD);
+    z-index: 999;
+    nav{
+        ul{
+            &:nth-child(2){
+                li{
+                    &:nth-child(2){
+                        a{
+                            border: 1px solid transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) and (min-width:960px){
+    .Container{
+        padding: 0 100px;
+        nav{
+        .zip{
+            ul{
+                &:nth-child(1){
+                    li{
+                        &:not(:nth-child(1)){
+                            margin-left: 35px;
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    li{
+                        &:nth-child(2){
+                            margin-left: 35px;
+                        }
+                    }
+                }
+            }
+        }
+        }
+    }
+}
+
+
+@media screen and (max-width:960px){
+    .Container{
+        padding: 0 30px;
+        position: relative;
+        // overflow: hidden;
+        position: sticky;
+        top: 0;
+        nav{
+            .Fris{
+                position: relative;
+                z-index: 4;
+            }
+            .nav-icon{
+                display: block;
+                position: relative;
+                z-index: 4;
+                span{
+                    svg{
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+            .zipOne{
+                position: absolute;
+                z-index: 2;
+                top: 0px;
+                right: 0px;
+                display: block;
+                width: 90px;
+                height: 70px;
+                background:linear-gradient(to  left,#E115AA,#8E44AD);
+                border-radius: 0 0 0 65px;
+                transition: 0.7s all linear;
+            }
+            .zipOne.rar{
+                background:linear-gradient(to  left,#E115AA,#8E44AD);
+                width: 100%;
+                height: 100vh;
+                border-radius: 0;
+            }
+            .zip{
+                width: 100%;
+                left: -140%;
+                flex-direction: column;
+                top: 80px;
+                position: absolute;
+                transition: 0.7s all linear;
+                background: transparent;
+                z-index: 100;
+                ul{
+                    li{
+                        a{
+                            text-align: center;
+                        }
+                    }
+                    &:nth-child(1){
+                        width: 100%;
+                        display: block;
+                        flex-direction: column;
+                        padding: 0;
+                        li{
+                            width: 100%;
+                            display: block;
+                            &:not(:nth-child(1)){
+                                margin-left: 0;
+                            }
+                            a{
+                                width: 80%;
+                                margin: 0 auto;
+                                display: block;
+                            }
+                        }
+                    }
+                    &:nth-child(2){
+                        width: 100%;
+                        display: block;
+                        flex-direction: column;
+                        li{
+                            width: 100%;
+                            display: block;
+                            &:nth-child(2){
+                                margin-left: 0;
+                                a{
+                                    padding: 12px 0;
+                                }
+                            }
+                            a{
+                                width: 80%;
+                                display: block;
+                                margin: 0 auto;
+                                box-sizing: border-box;
+                            }
+                        }
+                    }
+                }
+            }
+            .zip.active{
+                left:0;
+            }
+        }
+    }
+    
+.Container.effect{
+    box-shadow: 2px 2px 10px red;
+    background:linear-gradient(to  left,#E115AA,#8E44AD);
+    z-index: 999;
+    nav{
+        ul{
+            &:nth-child(2){
+                li{
+                    &:nth-child(2){
+                        a{
+                            border: 1px solid transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}

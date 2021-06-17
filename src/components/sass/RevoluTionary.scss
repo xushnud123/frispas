@@ -1,0 +1,243 @@
+@import './bootstrap';
+
+.carausel{
+    padding: 0 140px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin-top: 50px;
+    .inputOne{
+        width: 445px;
+        height: auto;  
+        display: flex;
+        align-items: center;
+        .estimate{
+            position: relative;
+            text-align: center;
+            z-index: 1;
+            width:100%;
+            height: 459px;
+            background: $blue;
+            h2{
+                margin-top: 30px;
+                margin-bottom: 25px;
+                @include font(bold,34px,44px);
+                color: $oq;
+            }
+            .rar{
+                margin: 0 auto;
+                width: 365px;
+                height: 60px;
+                background: #0D2C4A;
+                padding: 8px 16px;
+                &:not(:nth-child(1)){
+                    margin-top: 17px;
+                }
+                label{
+                    text-align: start;             
+                    display: block;
+                    @include font(600,16px,26px);
+                    color: $oq;
+                    opacity: 0.35;
+                    margin-left: 3px;
+                }
+                select{
+                    width: 100%;
+                    background: #0D2C4A;
+                    border: none;
+                    outline: none;
+                    @include font(600,16px,26px);
+                        color: $oq;
+                    option{
+                        @include font(600,16px,26px);
+                        color: $oq;
+                    }
+                }
+                .react-datepicker-wrapper{
+                    width: 100%;
+                    input{
+                        margin-left: 3px;
+                        width: 100%;
+                        background: #0D2C4A;
+                        border: none;
+                        outline: none;
+                        @include font(600,16px,26px);
+                            color: $oq;
+                    }
+                }
+
+            }
+            .find{
+                position: relative;
+                overflow: hidden;
+                width: 397px;
+                height: 53px;
+                margin: 15px auto 0 auto;
+                cursor: pointer;
+                padding: 8px 16px;
+                border: 0;
+                color: $oq;
+                background:$sabzirang;
+                @include font(bold,18px,28px);
+                &:hover{
+                    box-shadow: 0 5px 8px #f87750,
+                                0 -5px 8px #f87750
+                }
+            }
+            span{
+                position: absolute;
+                background: $oq;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                border-radius: 50%;
+                left: 50% !important;
+                top: 20px !important;
+                animation: animate 1s linear infinite;
+            }
+            @keyframes animate {
+                0%{
+                    width: 0px;
+                    height: 0px;
+                    opacity: 0.9;
+                }
+                100%{
+                    width: 800px;
+                    height: 800px;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    .flesh{
+        position: relative;
+        z-index: -1;
+        img{
+            filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+        }
+    }
+    .slick-dots{
+        bottom: 50px;
+        li{
+            button{
+                &::before{
+                    content: '';
+                    width: 16px;
+                    height: 4px;
+                    background: $oq;
+                    opacity: 0.5;
+                }
+            }
+        }
+        li.slick-active{
+            width: 40px;
+            button{
+                &::before{
+                    width: 40px;
+                    background: $sabzirang;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) and (min-width:960px){
+    .carausel{
+        padding: 0 100px;
+        .inputOne{
+            width: 380px;
+            .estimate{
+                h2{
+                    @include font(bold,30px,44px)
+                }
+                .rar{
+                    width: 300px;
+                    height: 55px;
+                    label{
+                        @include font(600,15px,25px);
+                    }
+                    select{
+                        @include font(600,15px,25px);
+                        option{
+                            @include font(600,15px,25px);
+                        }
+                    }
+                }
+                .find{
+                    width: 332px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:960px) and (min-width:600px){
+    .carausel{
+        padding: 0 30px;
+        grid-row-gap: 30px;
+        .inputOne{
+            grid-column: 1 / 3;
+            justify-self: center;
+            .estimate{
+                h2{
+                    @include font(bold,28px,40px)
+                }
+                .rar{
+                    width: 300px;
+                    height: 55px;
+                    label{
+                        @include font(600,14px,23px);
+                    }
+                    select{
+                        @include font(600,14px,23px);
+                        option{
+                            @include font(600,14px,23px);
+                        }
+                    }
+                }
+                .find{
+                    width: 332px;
+                }
+            }
+        }
+        .slick-slider{
+            grid-column: 1 / 3;
+        }
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .carausel{
+        padding: 0 30px;
+        grid-row-gap: 30px;
+        .inputOne{
+            grid-column: 1 / 3;
+            justify-self: center;
+            width: 100%;
+            .estimate{
+                h2{
+                    @include font(bold,28px,40px)
+                }
+                .rar{
+                    width: 80%;
+                    height: 55px;
+                    label{
+                        @include font(600,14px,23px);
+                    }
+                    select{
+                        @include font(600,14px,23px);
+                        option{
+                            @include font(600,14px,23px);
+                        }
+                    }
+                }
+                .find{
+                    width: 87.6%;
+                }
+            }
+        }
+        .slick-slider{
+            grid-column: 1 / 3;
+        }
+    }
+}

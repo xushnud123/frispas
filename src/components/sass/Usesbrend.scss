@@ -1,0 +1,161 @@
+@import './bootstrap';
+
+
+.uses{
+    padding: 0 140px;
+    margin-top: 100px;
+    .frispas{
+        text-align: center;
+        h1{
+            @include font(bold,40px,51px);
+            color: $blue;
+        }
+        p{
+            margin-top: 24px;
+            @include font(500,18px,28px);
+            color:$gray;
+        }
+    }
+    .brend{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-gap: 35px;
+        div{
+            &:nth-child(6){
+                justify-self: center;
+                img{
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .uses{
+        padding: 0 140px;
+        .brend{
+            grid-gap: 40px;
+            div{
+                width: 100%;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    justify-self: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) and (min-width:960px) {
+    .uses{
+        padding: 0 100px;
+        .brend{
+            grid-gap: 10px;
+            div{
+                width: 100%;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                img{
+                    width: 90%;
+                    height: 100%;
+                    justify-self: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:960px) and (min-width:700px) {
+    .uses{
+        padding: 0 30px;
+        margin-top: 50px;
+        .frispas{
+            h1{
+                @include font(bold,35px,47px);
+            }
+            p{
+                @include font(500,17px,26px);
+            }
+        }
+        .brend{
+            grid-gap: 10px;
+            div{
+                width: 100%;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                img{
+                    width: 90%;
+                    height: 100%;
+                    justify-self: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:700px) and (min-width:500px) {
+    .uses{
+        padding: 0 30px;
+        margin-top: 50px;
+        .frispas{
+            h1{
+                @include font(bold,35px,47px);
+            }
+            p{
+                @include font(500,17px,26px);
+            }
+        }
+        .brend{
+            grid-gap: 30px;
+            grid-template-columns: repeat(3,1fr);
+            div{
+                width: 100%;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                img{
+                    width: 90%;
+                    height: 100%;
+                    justify-self: center;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:500px) {
+    .uses{
+        padding: 0 30px;
+        margin-top: 50px;
+        .frispas{
+            h1{
+                @include font(bold,30px,41px);
+            }
+            p{
+                @include font(500,16px,24px);
+            }
+        }
+        .brend{
+            grid-gap: 30px;
+            grid-template-columns: repeat(2,1fr);
+            div{
+                width: 100%;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                img{
+                    width: 90%;
+                    height: 100%;
+                    justify-self: center;
+                }
+            }
+        }
+    }
+}

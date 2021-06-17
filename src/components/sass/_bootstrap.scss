@@ -1,0 +1,34 @@
+@mixin display($ju){
+    display: flex;
+    justify-content: $ju;
+    align-items: center;
+}
+
+
+
+@mixin colbo($co,$bo) {
+    color: $co;
+    border-bottom: 1px solid $bo;
+}
+
+@mixin border($co,$bo) {
+    color: $co;
+    border: 1px solid $bo;
+}
+
+@mixin font($we,$si,$he){
+    font-style: normal;
+    font-weight: $we;
+    font-size: $si;
+    line-height: $he;
+}
+
+
+$red:#F53855;
+$blue:#10375C;
+$qora:#222831;
+$sabzirang:#FF5722;
+$oq:#ffffff;
+$gray:#6A6A6A;
+$footer:#0D2C4A;
+$option:rgba(255,255,255,0.2);

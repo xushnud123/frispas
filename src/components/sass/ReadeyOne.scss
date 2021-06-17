@@ -1,0 +1,230 @@
+@import './bootstrap';
+
+
+.readey{
+    padding: 0 140px;
+    background: $blue;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 50px;
+    .readeyOne{
+        padding: 70px 0;
+        .word{
+            display: flex;
+            h3{
+                @include font(500,20px,30px);
+                color: $oq;
+                margin-right: 15px;
+            }
+            .wordOne{
+                width: 73px;
+                height: 2px;
+                background:$oq;
+                margin-top: 12px;
+            }
+        }
+        h1{
+            margin: 8px 0 16px 0;
+            @include font(bold,40px,51px);
+            color: $oq;
+        }
+        p{
+            @include font(normal,20px,30px);
+            color: $oq;
+        }
+        .batton{
+            position: relative;
+            overflow: hidden;
+            margin-top: 30px;
+            width: 350px;
+            height: 53px;
+            background: $sabzirang;
+            @include display(center);
+            @include font(bold,18px,28px);
+            color: $oq;
+            border: 0;
+            cursor: pointer;
+            &:hover{
+                box-shadow: 0 5px 8px #f87750,
+                            0 -5px 8px #f87750
+            }
+        }
+        span{
+            position: absolute;
+            background: $oq;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            border-radius: 50%;
+            left: 50% !important;
+            top: 20px !important;
+            animation: animate 1s linear infinite;
+        }
+        @keyframes animate {
+            0%{
+                width: 0px;
+                height: 0px;
+                opacity: 0.9;
+            }
+            100%{
+                width: 800px;
+                height: 800px;
+                opacity: 0;
+            }
+        }
+    }
+    .readeyTwo{
+        .zip{
+            @include display(center);
+            flex-direction: column;
+            position: relative;
+            .imgBx{
+                margin-top: 50px;
+                width: 353px;
+                height: 420px;
+            }
+            .zipone{
+                position: absolute;
+                bottom: 0;
+                height: 505px;
+                img{
+                    width: 335px;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) and (min-width:960px) {
+    .readey{
+        padding: 0 100px;
+        .readeyOne{
+            padding: 40px 0;
+            h1{
+                @include font(bold,37px,38px);
+            }
+            p{
+                @include font(normal,18px,26px);
+            }
+        }
+        .readeyTwo{
+            .zip{
+                height: 100%;
+                .imgBx{
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:960px) and (min-width:800px) {
+    .readey{
+        padding: 0 30px;
+        grid-gap: 20px;
+        .readeyOne{
+            padding: 70px 0;
+            h1{
+                @include font(bold,30px,41px);
+            }
+            p{
+                @include font(normal,17px,26px);
+            }
+            .batton{
+                width: 90%;
+            }
+        }
+        .readeyTwo{
+            .zip{
+                height: 100%;
+                .imgBx{
+                    height: 100%;
+                    width: 75%;
+                }
+                .zipone{
+
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:800px) and (min-width:650px) {
+    .readey{
+        padding: 0 30px;
+        grid-gap: 20px;
+        .readeyOne{
+            padding: 30px 0;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            h1{
+                @include font(bold,30px,41px);
+            }
+            p{
+                @include font(normal,17px,26px);
+            }
+            .batton{
+                width: 90%;
+            }
+        }
+        .readeyTwo{
+            .zip{
+                height: 100%;
+                .imgBx{
+                    height: 100%;
+                    width: 96%;
+                }
+                .zipone{
+                    height: 430px;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:650px){
+    .readey{
+        padding: 0 30px;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1,1fr);
+        .readeyOne{
+            padding: 30px 0;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            h1{
+                @include font(bold,26px,37px);
+            }
+            p{
+                @include font(normal,17px,25px);
+            }
+            .batton{
+                width: 90%;
+            }
+        }
+        .readeyTwo{
+            .zip{
+                height: 100%;
+                justify-content: flex-end;
+                .imgBx{
+                    margin-top: 0;
+                    width: 100%;
+                }
+                .zipone{
+                    height: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

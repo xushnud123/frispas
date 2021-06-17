@@ -1,0 +1,118 @@
+@import './bootstrap';
+
+
+.footer{
+    padding: 50px 140px;
+    background: $footer;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(6,1fr);
+    .One{
+        padding-right: 80px;
+        grid-column: 1 / 3;
+        .fris{
+            list-style: none;
+            a{
+                text-decoration: none;
+                @include font(bold,52px,67px);
+                color: $oq;
+            }
+        }
+        h3{
+            margin-top: 16px;
+            @include font(normal,16px,26px);
+            color: #F8F8F8;
+            opacity: 0.85;
+        }
+        ul{
+            margin-top: 24px;
+            display: flex;
+            li{
+                list-style: none;
+                &:not(:nth-child(1)){
+                    margin-left: 20px;
+                }
+                a{
+                    text-decoration: none;
+                    img{
+
+                    }
+                }
+            }
+        }
+    }
+    .Two{
+        h2{
+            @include font(500,20px,30px);
+            color: $oq;
+            opacity: 0.5;
+            margin-top: 30px;
+            margin-bottom: 24px;
+        }
+        p{
+            @include font(normal,16px,26px);
+            color: $oq;
+            &:not(:nth-child(1)){
+                margin-top: 9px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) and (min-width:960px) {
+    .footer{
+        padding:40px 100px;
+        grid-gap: 10px;
+        .One{
+            padding-right: 50px;
+        }
+    }
+}
+
+@media screen and (max-width:960px) and (min-width:700px) {
+    .footer{
+        padding:40px 30px;
+        grid-gap: 10px;
+        .One{
+            padding-right: 20px;
+            .fris{
+                a{
+                    @include font(bold,45px,60px);
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:700px) and (min-width:500px) {
+    .footer{
+        padding:40px 30px;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3,1fr);
+        .One{
+            padding-right: 80px;
+            .fris{
+                a{
+                    @include font(bold,45px,60px);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px){
+    .footer{
+        padding:40px 30px;
+        grid-gap: 10px;
+        grid-template-columns: repeat(2,1fr);
+        .One{
+            padding-right: 40px;
+            .fris{
+                a{
+                    @include font(bold,40px,50px);
+                }
+            }
+        }
+    }
+}

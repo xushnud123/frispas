@@ -1,0 +1,234 @@
+@import './bootstrap';
+
+
+.news{
+    padding: 0 140px 50px 140px;
+    background: #F8F8F8;
+    .newsOne{
+        padding-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        h1{
+            @include font(bold,40px,51px);
+            color:$blue;
+        }
+        .more{
+            display: flex;
+            align-items: center;
+            p{
+                @include font(normal,16px,26px);
+                color:$sabzirang;
+                transition: all linear 0.3s;
+                margin-right: 8px;
+            }
+            img{
+                width: 32px;
+                height: 32px;
+            }
+            &:hover{
+                p{
+                    margin-right: 16px;
+                }
+            }
+        }
+    }
+    .newsTwo{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 30px;
+        .google{
+            background: $oq;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-column: 1 / 3;
+            grid-gap: 30px;
+            .sunday{
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .comment{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                h1{
+                    margin-top: 10px;
+                    @include font(bold,35px,45px);
+                    color:$qora
+                }
+                p{
+                    margin-top: 32px;
+                    @include font(500,18px,26px);
+                    color:$gray;
+                }
+                .rar{
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    display: flex;
+                    align-items: center;
+                    .rar_bir{
+                        width: 56px;
+                        height: 56px;
+                        margin-right: 20px;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .rar_ikki{
+                        h1{
+                            @include font(700,18px,23px);
+                            color: $qora;
+                        }
+                        p{
+                            margin-top: 4px;
+                            @include font(normal,16px,20px);
+                            color: $gray;
+                            transition: all linear 0.27s;
+                        }
+                    }
+                }
+            }
+        }
+        .mini{
+            background: $oq;
+            .mini_one{
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .mini_two{
+                padding: 15px;
+                h1{
+                    @include font(normal,22px,34px);
+                    color:$qora;
+                }
+                p{
+                    margin-top: 8px;
+                    @include font(normal,19px,26px);
+                    color:$gray
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:1200px) and (min-width:960px) {
+    .news{
+        padding: 0 100px 50px 100px;
+        .newsOne{
+            h1{
+                @include font(bold,35px,41px);
+            }
+        }
+        .newsTwo{
+            .google{
+                .comment{
+                    h1{
+                        @include font(bold,30px,38px);
+                    }
+                    p{
+                        @include font(500,17px,21px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:960px) and (min-width:800px) {
+    .news{
+        padding: 0 30px 50px 30px;
+        .newsOne{
+            padding-top: 30px;
+            align-items: baseline;
+            h1{
+                @include font(bold,35px,41px);
+            }
+        }
+        .newsTwo{
+            grid-template-columns: repeat(2,1fr);
+            .google{
+                .comment{
+                    padding-right: 20px;
+                    h1{
+                        @include font(bold,35px,42px);
+                    }
+                    p{
+                        @include font(500,21px,38px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:800px) and (min-width:600px) {
+    .news{
+        padding: 0 30px 50px 30px;
+        .newsOne{
+            padding-top: 30px;
+            align-items: baseline;
+            h1{
+                @include font(bold,26px,34px);
+            }
+            .more{
+                margin-top: 20px;
+                justify-content: flex-end;
+            }
+        }
+        .newsTwo{
+            grid-template-columns: repeat(2,1fr);
+            .google{
+                .comment{
+                    padding-right: 20px;
+                    h1{
+                        @include font(bold,32px,45px);
+                    }
+                    p{
+                        @include font(500,19px,27px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px){
+    .news{
+        padding: 0 30px 50px 30px;
+        .newsOne{
+            padding-top: 30px;
+            flex-direction: column;
+            h1{
+                @include font(bold,26px,34px);
+            }
+            .more{
+                margin-top: 20px;
+                justify-content: flex-end;
+            }
+        }
+        .newsTwo{
+            grid-template-columns: repeat(1,1fr);
+            .google{
+                grid-column: 1 / 2;
+                grid-template-columns: repeat(1,1fr);
+                .comment{
+                    padding: 0 20px;
+                    h1{
+                        margin-top: 0;
+                        @include font(bold,30px,43px);
+                    }
+                    p{
+                        margin-top: 25px;
+                        @include font(500,18px,30px);
+                    }
+                }
+            }
+        }
+    }
+}
